@@ -35,6 +35,23 @@ Integrated Developnment Environment (IDEs'):
 
 Editor --> Compiler --> Linker --> Debugger --> Sync
 
+*Installation process:* 
+winlibs.com --> Download GCC latest version --> Unzip the file --> Extract all to a desired simple location --> open mgwin64 --> go to bin --> Copy path of file --> Got to environmnet variable --> path --> new --> paste path of file --> click ok.
+
+*Verification:* Go to cmd --> gcc --verion (command which will show current status)
+
+*VS Code configuration:*
+
+https://code.visualstudio.com/docs/cpp/config-mingw  
+
+
+
+
+
+
+
+
+
 
 
 
