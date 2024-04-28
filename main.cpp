@@ -17,8 +17,8 @@ int main() {            // main function (Executin begins here)
     return 0;
 }
 
-/*Runnning code in terminal: When gcc isn't able to compile 
-Compiling the file: g++ file_name.cpp -o file-name.exe
+/* Runnning code in terminal: When gcc isn't able to compile 
+Compiling the file: g++ file_name.cpp -o file_name.exe
 Running the file: .\file_name.exe 
 */
 
@@ -51,7 +51,7 @@ Note: When fixing error start with the first one. This might help subsequent err
             std::cout << miles_driven;
 
     warning: 'miles_driven' is used uninitialized which means no value assigned.
-             This may lead to any random thing being printed. 
+              This may lead to any random thing being printed. 
     
     Have a no warnings, clean compiles policy when you code.
 */

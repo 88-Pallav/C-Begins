@@ -45,26 +45,3 @@ winlibs.com --> Download GCC latest version --> Unzip the file --> Extract all t
 https://code.visualstudio.com/docs/cpp/config-mingw  
 
 *Note: * If 'gcc' is giving problem use 'g++' while using Visual code. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
