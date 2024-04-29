@@ -36,7 +36,7 @@ take significant amount of time to build a project.
 3. Re-built: It's combination of build and clean. It's gonna clean everything and then build again.
 
 
-*Compiler Errors*
+*Compiler Errors: *
 Syntax Error: Something wrong with the structure eg. 
 std::cout << "Error << std::endl;  // Here second interverted comma is missing 
 return 0                           // here semi-clon is missing 
