@@ -72,6 +72,8 @@ int age {21};    // C++11 list intializing syntax
 */
 
 #include <iostream>
+#include <climits>
+
 using namespace std;
 
 // This program will calculate the area of a room in square feet
@@ -89,16 +91,16 @@ int main() {
    /* int room_width;              - We have not initialized bcz we are going to read input here
     But the best practice is to initialize it 0 in such a case.
    */
-    // int room_width{0};
-    // int room_length{0};
+    int room_width{0};
+    int room_length{0};
 
-    // cout << "Enter the width of the room: ";
-    // cin >> room_width;
+    cout << "Enter the width of the room: ";
+    cin >> room_width;
 
-    // cout << "Enter the lenth of the room: ";
-    // cin >> room_length;
+    cout << "Enter the lenth of the room: ";
+    cin >> room_length;
 
-    // cout << "The area of the room is " << room_width*room_length << " Sq.ft" << endl;
+    cout << "The area of the room is " << room_width*room_length << " Sq.ft" << endl;
 
     // return 0;
 
@@ -261,11 +263,188 @@ Primitive Data Types:
 
    short value_1 {30000};
    short value_2 {1000};
-   short product {value_1*value_2};     // Each of the values can fit but the product will not leading to OVERFLOW. 
+   int product {value_1*value_2};     // Each of the values can fit but the product will not leading to OVERFLOW if we use short. 
 
    cout << "The sum of " << value_1 << " and " << value_2 << " is " << product << endl;
 
-   return 0;
+   
 
+
+   /***********************************************************************************************************
+    * sizeof operator: determines the size in bytes of a type or variable. Eg.
+      
+      sizeof(int)
+      sizeof(double) 
+
+      sizeof(some-variable)
+
+      sizeof some_variable
+      
+    * <climits> and <cfloat>
+        - The climits and cfloat are includes files which contain size and precision information about your implementation of C++
+
+            INT_MAX
+            INT_MIN
+            LONG_MIN
+            LONG_MAx
+            FLT_MIN
+            FLT_MAX
+            ....... 
+   */
+
+    cout << "sizeof information" << endl;
+    cout << "=============================================================" << endl;
+
+    cout << "char: " << sizeof(char) << " bytes." << endl;
+    cout << "int: " << sizeof(int) << " bytes." << endl;
+    cout << "unsigned int: " << sizeof(unsigned int) << " bytes." << endl;
+    cout << "short: " << sizeof(short) << "bytes" << endl;
+    cout << "long: " << sizeof(long) << " bytes." << endl;
+    cout << "long long: " << sizeof(long long) << " bytes." << endl;
+
+    cout << "=============================================================" << endl;
+    cout << "float: " << sizeof(float) << " bytes." << endl;
+    cout << "double: " << sizeof(double) << " bytes." << endl;
+    cout << "long double: " << sizeof(long double) << " bytes." << endl;
+    
+    // use values defined in <climits>
+    cout << "=============================================================" << endl;
+
+    cout << "Minimum values: " << endl;
+    cout << "int: " << INT_MIN << endl;
+    cout << "char: " << CHAR_MIN << endl;
+    cout << "short: " << SHRT_MIN << endl;
+    cout << "long: " << LONG_MIN << endl;
+    cout << "long long: " << LLONG_MIN << endl;
+
+
+    // use values defined in <climits>
+    cout << "=============================================================" << endl;
+
+    cout << "Minimum values: " << endl;
+    cout << "int: " << INT_MIN << endl;
+    cout << "char: " << CHAR_MIN << endl;
+    cout << "short: " << SHRT_MIN << endl;
+    cout << "long: " << LONG_MIN << endl;
+    cout << "long long: " << LLONG_MIN << endl;
+
+    // use values defined in <climits>
+    cout << "=============================================================" << endl;
+
+    cout << "Maximum values: " << endl;
+    cout << "int: " << INT_MAX << endl;
+    cout << "char: " << CHAR_MAX << endl;
+    cout << "short: " << SHRT_MAX << endl;
+    cout << "long: " << LONG_MAX << endl;
+    cout << "long long: " << LLONG_MAX << endl;
+
+    // sizeof can also be used with variables names
+    cout << "=============================================================" << endl;
+
+    cout << "sizeof using varaible names" << endl;
+    int age{21};
+    cout << "age is " << sizeof(age) << " bytes." << endl;
+                    // or
+    cout << "age is " << sizeof age << " bytes." << endl;       // Here age is without parethesis 
+
+    double wage {22.48};
+    cout << "wage is " << sizeof(wage) << " bytes." << endl;
+                    // or
+    cout << "wage is " << sizeof wage << " bytes." << endl;
+
+    /*********************************************************************************************************
+     * Constant: Are like variables
+        - have names
+        - occupy storage
+        - Are usually typed
+
+        Their value cannot be changed once declaration.
+     
+     * Types of constant: 
+        - Literal constants 
+        - Declared constants 
+            const keyword
+        - Constant Expressions
+            constexpr keyword 
+        - Enumerated constants 
+            enum keyword
+        - Defined constants  
+            #define
+    
+     * Literal Constants: 
+               x = 12;
+               y = 15.6
+            name = "frank";
+        middle_inital = 'J';
+
+        Integer literal constants: 
+            12  - an integer
+            12U - an unsigned integer 
+            12L - a long integer
+            12LL - a long long integer
+
+        Floating-point literal constants 
+            12.1  - a double
+            12.1F - a float
+            12.1l - a long float
+        
+        Character Literal constants 
+            \n  - newline
+            \r  - return
+            \t  - tab
+            \b  - backspace
+            \'  - single quote
+            \"  - double quote
+            \\  - backslash
+  
+        cout << "Hello\tthere\nmy friend\n";    Hello       there 
+                                                my friend 
+
+     * Declared constants:
+          const double pi {3.14926}
+          const int months_in_year {12};
+
+          pi = 2.5;     // Compiler error when you change the value fo a decalred constant 
+
+    
+      * Defined constants: using preprocessor directive
+
+            constants decalared using the const keyword
+            #define  pi 3.1415926
+
+            This acts like a blind find & replace which makes it difficult to find errors.
+
+    **************************************************************************************************************************************
+    Carpet Cleaning Estimate: 
+
+    Number of rooms: 2
+    Price per room: $ 30 
+    Tax: 3.6
+    Cost: $ 60
+
+    Total estimate: $63.6 
+    (Estimate validity for 30 days)
+    */
+
+   cout << "How many small rooms do you want? " << endl; 
+   int number_of_small_rooms {0};
+   cin >> number_of_small_rooms;
+
+   cout << "How many large rooms do you want? " << endl; 
+   int number_of_large_rooms {0};
+   cin >> number_of_large_rooms;
+
+   const int cost_per_small_room {30};
+   const int cost_per_large_room {35};
+   int rent_cost = (number_of_small_rooms*cost_per_small_room)+(number_of_large_rooms*cost_per_large_room);
+   cout << "Your rent cost comes out to be " << rent_cost << endl;
+
+   const double sales_tax_per_room {0.06};
+   double total_taxes = rent_cost*sales_tax_per_room;
+   cout <<  "Your taxes comes out to be " << total_taxes << endl;
+   cout << "==========================================================" << endl;
+   cout << "Your total cost comes out to be " << rent_cost + total_taxes << endl;
+   cout << "This estimate is valid for " << 30 << " days only." << endl;
+   
+    return 0;
 }
-            
