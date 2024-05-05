@@ -122,7 +122,6 @@
     cout << rupees << " Rupees is equivalent to " << dollars << " dollars " << endl;
     cout << endl;
 
-
     /*
  * Increment ++ and decrement -- Operators
     Incremetns or decrements its operands by 1 (can be used with integers, floating types and pointers)
@@ -225,14 +224,14 @@
 
     int total_amount {100};
     int total_number {8};
-    double average {0.0};
+    double avg {0.0};
 
-    average = total_amount / total_number;
-    cout << average << endl;                // displays 12
+    avg = total_amount / total_number;
+    cout << avg << endl;                // displays 12
 
-    average = static_cast<double> (total_amount) / total_number;
+    avg = static_cast<double> (total_amount) / total_number;
     
-    cout << average << endl;                // display 12.5
+    cout << avg << endl;                // display 12.5
 
 
     int total{};
@@ -252,11 +251,292 @@
     cout << "The sum of the numbers is: " << total << endl;
     cout << "The average the numbers is: " << average << endl;
 
-    cout << endl;
-    return 0;
+/*
+ * Testing for Equality: (== and != operators)
+    - Compares the values of 2 expressions 
+    - Evaluates to a boolean (True or false, 1 or 0)
+    - commonly used in control flow statements 
 
+    expr1 == expr2
+    expr1 != expr2
+
+    100 == 200
+    num1 != num2
+
+    bool result {false};
+    result = (100 == 50 + 50);
+
+    result = (num1 != num2);
+
+    cout << (num1 == num2) << endl;     // 0 or 1
+    cout << boolalpha;
+    cout << (num1 == num2) << endl;     // true or false
+    cout << noboolalpha;
+*/
+    bool equal_result {false};
+    bool not_equal_result {false};
+
+    int num11{}, num22{};
+
+    cout << boolalpha;          // will display true/false instead of 1/0 for booleans
+
+    cout << "Enter two integers separated by a space: " << endl;
+    
+    cin >> num11 >> num22;
+    
+    equal_result = (num11 == num22);
+    not_equal_result = (num11 =! num22);
+
+    cout << "Comparison result (equals): " << equal_result << endl;
+    cout << "Comparing result (not equals): " << not_equal_result << endl;
+
+    // Characters 
+    char char1{}, char2{};
+    cout << "Enter two characters separated by a space: ";
+    
+    cin >> char1 >> char2;
+    
+    equal_result = (char1 == char2);
+    not_equal_result = (char1 != char2);
+
+    cout << "Comparison result (equals): " << equal_result << endl;
+    cout << "Comparison result (not equals): " << not_equal_result << endl;
+
+    // Doubles 
+    char double1{}, double2{};
+    cout << "Enter two characters separated by a space: ";
+    
+    cin >> double1 >> double2;
+    
+    equal_result = (double1 == double2);
+    not_equal_result = (double1 != double2);
+
+    cout << "Comparison result (equals): " << equal_result << endl;
+    cout << "Comparison result (not equals): " << not_equal_result << endl;
+
+
+    // Integer and a double:
+
+    cout << "Enter an integer and a double seperated by a space: ";
+    cin >> num11 >> double1;
+
+    equal_result = (num11 == double1);       // int will promoted to a double in this case and then the comparison will take place
+    not_equal_result = (num11 =! double1);
+
+    cout << "Comparison result (equals): " << equal_result << endl;
+    cout << "Comparison result (not equals): " << not_equal_result << endl;
+
+/*
+ * Relattional operators: 
+    expr1 op expr2 
+
+    >       greater than
+    >=      greater than or equal to
+    <       less than
+    <=      less than or equal to
+    <=>     three-way comparison (C++20)
+*/
+    int nu_1{}, nu_2{};
+
+    cout << boolalpha;
+    cout << "Enter two integers separated by a space: ";
+    cin >> nu_1 >> nu_2;
+
+    cout << nu_1 << " > " << nu_2 << " : " << (nu_1 > nu_2) << endl;
+    cout << nu_1 << " >= " << nu_2 << " : " << (nu_1 >= nu_2) << endl;
+    cout << nu_1 << " < " << nu_2 << " : " << (nu_1 < nu_2) << endl;
+    cout << nu_1 << " <= " << nu_2 << " : " << (nu_1 <= nu_2) << endl;
+
+
+    const int lower {10};
+    const int upper {20};
+
+    cout << "\nEnter an integer that is greater than " << lower << " : ";
+    cin >> nu_1;
+    cout << nu_1 << " > " << lower << " is " << (nu_1 > lower) << endl;
+
+    cout << "Enter an integer that is less than or equal to " << upper << " : ";
+    cin >> nu_1;
+    cout << nu_1 << " <= " << upper << " is " << (nu_1 <= upper) << endl;
+
+/*
+ * Logical operators: 
+
+    not !  - negation
+    and && - logical and    
+    or ||  - logical or
+
+ * not (!):
+
+      a           !a
+    true        false
+    fasle       true
+
+ * and (&&)
+    
+      a       b       a && b
+    true    true       true
+    true    false      false
+    false   true       false
+    fasle   fasle      false
+
+ * or (||)
+
+      a       b       a || b
+    true    true       true
+    true    false      true
+    false   true       true
+    false   false      false
+
+* Precedence:
+    - 'not' has higher precedence than 'and'
+    - 'and' has higher precedence than 'or'
+            (!= >> && >> ||)
+    - 'not' is a unary operator
+    - 'and' and 'or' are binary opeator
+
+    Eg.1: 
+
+    num_1 >= 10 && num_1 < 20;
+    num_1 <= 10 || num_1 = 20;
+
+    !is_raining && temperature > 32.0;
+    is_raining || is_snowing 
+    temperature > 100 && is_humid || is_raining 
+
+
+ * Short-circuit evaluation: When evaluating a logical expression C++ stops as soon as the result is known.
+
+        expr1 && expr2 && expr3     - if expr 1  and expr2 is true, it'll stop and won't evaluate expr 2 and expr 3
+        expr1 || expr2 || expr3
+*/
+    int nu {};
+    const int lowr {};
+    const int uppr {};
+
+    cout << boolalpha;
+
+    // Determine if an entered integer is between two other integers
+    // assume lower < upperrr
+    cout << "Enter an intger - the bounds are " << lowr << " and " << " upper " << " : ";
+    cin >> nu;
+
+    bool within_bounds {false};
+
+    within_bounds = (nu > lowr && nu < uppr);
+    cout << nu << " is between " << lowr << " and " << uppr << " : " << within_bounds << endl;
+
+
+    // Determine if an entered integer is outside two other integers
+    // assume lowr < uppr
+    cout << "\nEnter an intger - the bounds are " << lowr << " and " << " upper " << " : ";
+    cin >> nu;
+
+    bool outside_bounds {false};
+
+    outside_bounds = (nu < lowr || nu > uppr);
+    cout << nu << " is outside " << lowr << " and " << uppr << " : " << outside_bounds << endl;
+
+
+    // Determine if an entered integer is on boundary of two other integers:
+    // assume lowr < uppr
+    cout << "\nEnter an intger - the bounds are " << lowr << " and " << " upper " << " : ";
+    cin >> nu;
+
+    bool on_bounds {false};
+
+    outside_bounds = (nu == lowr || nu == uppr);
+    cout << nu << " is on one of the bounds which are " << lowr << " and " << uppr << " : " << on_bounds << endl;
+
+
+    // Determine if you need to wear a coat based on temperature and wind speed
+    bool wear_coat {false};
+    double temperature {};
+    int wind_speed {};
+    
+    const int wind_speed_for_coat {25};     // wind over this value requires a coat
+    const int temp_for_coat {45};           // temperture below this value requires a coat
+
+    // Require a coat if wind speed is too high or temperature is too low
+    cout << "\nEnter the current temperature in (F): ";
+    cin >> temperature;
+    cout << "Enter the wind speed in (mph): ";
+    cin >> wind_speed;
+
+    wear_coat = (temperature < temp_for_coat || wind_speed > wind_speed_for_coat);
+    cout << "Do you need to wear a  coat using OR? " << wear_coat << endl;
+
+    // Require a coat when wind speed is too high AND temperature is too low
+    wear_coat = (temperature < temp_for_coat) && (wind_speed > wind_speed_for_coat);
+    cout << "Do you need to wear a coat using AND? " << wear_coat << endl;
+
+/*
+ * Compound Assignment: op= 
+
+    +=      lhs += rhs;         lhs = lhs + (rhs);
+    -=      lhs -= rhs;         lhs = lhs - (rhs);
+    *=      lhs *= rhs;         lhs = lhs * (rhs);
+    /=      lhs /= rhs;         lhs = lhs / (rhs);
+    %=      lhs %= rhs;         lhs = lhs % (rhs);
+    
+            // Bitwise operators
+    >>=     lhs >>= rhs;        lhs = lhs >> (rhs);
+    <<=     lhs <<= rhs;        lhs = lhs << (rhs);
+    &=      lhs &= rhs;         lhs = lhs & (rhs);
+    ^=      lhs ^= rhs;         lhs = lhs ^ (rhs);
+    |=      lhs |= rhs;         lhs = lhs | (rhs);   
+
+    Eg:
+        lhs op= rhsl;       // lhs = lhs op (rhs);
+        a += 1;             // a = a + 1;
+        a /= 5;             // a = a / 5;
+        a *= b + C;         // a = a * (b + c);
+
+        cost += items * tax;    // cost = cost + (items * tax);
+
+    Note: Always imagine rhs is a parenthesis and then observe
+
+
+ * Associativity: Precedence rules when adjacent operators are different 
+    - expr1 op1 expr2  op2  expr3       // precedence 
+   Eg. 
+        result = num1 + num2 * num3;
+        result = (num1 + (num2 * num3));
+
+   Use associativity rules when adjacent operators have the same precedence 
+    - expr1 op1 expr2 op1   expr3       // associativity 
+   Eg. 
+        result = num1 + num2 - num3;
+        result = (num1 + (num2 - num3));
+
+   Note: Use parenthesis to absolutely remove any doubt 
+ */
+
+    /* Currency break-up in paisa: 
+        1 Rupee = 100 paise
+        1 adhani = 50 paise
+        1 chawani = 25 paise 
+        2 anna    = 8 paise
+        1 anna    = 4 paise
+    */  
+    int rupaiya{100}, athani {50}, chawani {25}, do_anna {8}, anna{4};
+    
+    int paisa{};
+    cout << "Enter an amount in paisa: " << endl;
+    cin >> paisa;
+
+    rupaiya = paisa % 100;
+    athani = (paisa - (rupaiya*100)) % 50;
+    chawani = (paisa - (rupaiya*100 + athani*50)) % 25;
+    do_anna = (paisa - (rupaiya*100 + athani*50 + chawani*25)) % 8;
+    anna = (paisa - (rupaiya*100 + athani*50 + chawani*25 + do_anna*8)) % 4;
+
+    cout << "Rupaiya: " << rupaiya << endl;
+    cout << "Athani: "  << chawani << endl;
+    cout << "Chawani: " << chawani << endl;
+    cout << "do_anna: " << do_anna << endl;
+    cout << "anna: "    << anna << endl;
+
+    return 0;
     }
 
-
-
-        
