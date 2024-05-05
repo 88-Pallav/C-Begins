@@ -41,7 +41,7 @@
  * Accessing array elements: 
         array_name  [element_index]
             test_scores [1]
-    */    
+*/        
     
     #include <iostream>
     #include <vector>
@@ -49,7 +49,7 @@
     using namespace std;
 
     int main() {
-/* 
+
     int test_scores [5] {100, 95, 99, 87, 88};
 
     cout << "First score at index 0: " << test_scores[0] << endl;       // test_scores[0] is called Array subscripting. 
@@ -64,12 +64,12 @@
     cout << "New first score at index 0 is: " << test_scores[0] << endl;
   
 
-
+/*
  - Name of arrray represents the location of first element in the array (index 0).
  - The [index] represents the offset from the beginning of the array.
  - C++ performs a calculation to find the correct element. 
  - Alert! There's no bound checking in C++.
-
+*/
     char vowels[] {'a', 'e', 'i', 'o', 'u'};        // empty [] means it'll figure out itself how big the array is
     cout << "\nThe first vowels is: " << vowels[0] << endl;
     cout << "The last vowel is: " << vowels[4] << endl;
@@ -215,7 +215,7 @@
     - vector will automatically allocate the required space 
     - Vector provides many bound checking methods 
 
-
+*/ 
         // vector <char> vowls;       - empty
         // vector <char> vowls(5);    - 5 elements initialized to 0
         vector <char> vowls {'a', 'e', 'i', 'o', 'u'};
@@ -292,7 +292,7 @@
         cout << movie_ratings.at(0).at(1) << endl;
         cout << movie_ratings.at(0).at(2) << endl;
         cout << movie_ratings.at(0).at(3) << endl;
-*/  
+
 
         vector<int> vector_1;
         vector<int> vector_2;
