@@ -1,10 +1,10 @@
 /*
  * Arrays: Arrays allows you to tell the compiler to give you collection of as many elements you want and give the 
-    entire colection of single name so you dont have to name each individual element.
-    - Compund data type and structure
+    entire collection of elements a single name so you dont have to name each individual element.
+    - Compound data type and structure
     - Collection of elements
     - All elements are of same type
-    - Each elelment can be accessed directly
+    - Each element can be accessed directly
     eg. We need to give a 100 test scores then we can go on declaring and initializing each one of them.
     Arrays allows you to tell the compiler to give you collection of as many elements you want and give the 
     entire colection of single name so you dont have to name each individual element.  
@@ -14,13 +14,13 @@
         - All elements are same type - stored contiguously in memory 
         - individual elements can be accessed by their position and index 
         - First element is at index 0 - Last index is at index-size - 1
-        - No check for outofbound i.e. whether it is within the size from 0 to size of arrray or not
+        - No check for outofbound i.e. whether it is within the size from 0 to size of array or not
         - Always initialize arrays - Very efficient 
         - Iteration (looping) is often used to process.
     
  * Declaring an array:
 
-        Element_type array_name [constant number of elements];
+        Element_type array_name [constant_number_of_elements];
         Eg.
             int test_scores [5];                    // array named 'test scores' of 5 integers 
             int high_score_per_level [10];               
@@ -30,7 +30,7 @@
 
  * Initialization:
 
-        Element_type array_name [number of elements] {init list}
+        Element_type array_name [number_of_elements] {init list}
 
         int test_scores [5] {100, 95, 99, 8, 88};
         int high_score_per_level [10] {3, 5};           // initializing first two to 3, 5 and remaining to 0.
@@ -53,7 +53,7 @@
     int test_scores [5] {100, 95, 99, 87, 88};
 
     cout << "First score at index 0: " << test_scores[0] << endl;       // test_scores[0] is called Array subscripting. 
-    cout << "Second score at inedx 1: " << test_scores[1] << endl;
+    cout << "Second score at index 1: " << test_scores[1] << endl;
     cout << "Third score at index 2: " << test_scores[2] << endl;
     cout << "Fourth score at index 3: " << test_scores[3] << endl;
     cout << "Fifth score at index 4: " << test_scores[4] << endl;
@@ -62,7 +62,7 @@
     test_scores[0] = 90;        // Assignment statement
     cout << "=================================================" << endl; 
     cout << "New first score at index 0 is: " << test_scores[0] << endl;
-  
+ 
 
 /*
  - Name of arrray represents the location of first element in the array (index 0).
@@ -145,7 +145,7 @@
     vector <char> vowels;       // vowels is a vector of characters
     vector <int> test_scores;   // int is a vector of integers 
 
-    vector <char> vowels (5);       // '(5)' this is a constructor initialization syntax i.e. you need 10 characters 
+    vector <char> vowels (5);       // '(5)' this is a constructor initialization syntax i.e. you need 5 characters 
     vector <int> test_scores (10);
     
  * Initializing a Vector:
