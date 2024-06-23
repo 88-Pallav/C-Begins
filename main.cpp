@@ -39,7 +39,7 @@ take significant amount of time to build a project.
 *Compiler Errors: *
 Syntax Error: Something wrong with the structure eg. 
 std::cout << "Error << std::endl;  // Here second interverted comma is missing 
-return 0                           // here semi-clon is missing 
+return 0                           // here semi-colon is missing 
 
 Semantic Error: Something wrong with the meaning 
 a + b;      // When it doesn't make sense to add a and b

@@ -14,14 +14,14 @@ Operators are +, *, /, << (Insertion Operator), >> (Extraction Operator), :: (Sc
 **************************************************************************************
 *Pre-processor: * A program that processes your source code before compiler sees it.
 It first strips all comments from source code and replaces each comment with a single space.
-Then it looks for pre-proceessor fdirectives and then executes them. 
+Then it looks for pre-processor directives and then executes them. 
 
 *Pre-processor Directives: * Lines in the source code which start from '#'. Eg.
-#include, When it sees this it replaces it with file is it refering to and then recursively
+#include, When it sees this, it replaces it with file it is refering to and then recursively
 processes the file.
 Pre-processor are used to conditionally compile code.
 
-Note: Pre-processor doent understand C++. It simply follows the pre-processor directives
+Note: Pre-processor doesn't understand C++. It simply follows the pre-processor directives
 and gets the source code ready for compiler. Compiler does understand pre-processor.
 
 ******************************************************************************************
@@ -48,7 +48,7 @@ int main (int argc, char *argv[]) {  // 'argc' is argument count & 'argv' is arg
 }
 
 **********************************************************************************************
-*NameSpaces: *To avoid namimg conflict, namespaces are used as containersto group their code identity
+*NameSpaces: *To avoid naming conflict, namespaces are used as containers to group their code identity
 as their name space into a namespace scope i.e. we create a namespace 'any_name' and define cout in that namespace
 So if another programmer wants to use namespace then he can say any_name::cout
 *'::' scope resolution operator; *Used to resolve which name we wanna use. 
@@ -80,7 +80,7 @@ cout << "data 1 is " << data1 << endl;
                 or
 cout << "data 1 is " << data1 << "\n"; 
 
-Note - When endl manipulator is used, it also flushes the stream. 
+Note - When 'endl' manipulator is used, it also flushes the stream. 
 Since it the stream is buffered it may not get written to the console until flushed. 
 
 
@@ -91,7 +91,7 @@ Since it the stream is buffered it may not get written to the console until flus
 1. Extract data from cin stream based on data's type
 cin >> data;
 2. Can be chained 
-cin >> data1 >> data2;
+cin >> data1 >> data2; 
 3. Can fail if the entered data cannot be interpreted
 data could've an undetermined value.
 
