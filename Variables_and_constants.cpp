@@ -17,11 +17,11 @@ Allows programmers to use meaninful names and not memory addresses
 Variable have types(category i.e. integer, real_number, string, Person, Account,...) 
 and values(contents like 10, 3.14, "Rank"....)
 
-Varaible must be declared befoer they are used i.e. 
+Varaible must be declared before they are used i.e. 
 int age;
 age = 21;
 
-simply writing age = 21; without declaration will give a compiler error.
+simply writing age = 21;    // without declaration will give a compiler error.
 
 ***************************************************************************************************************
 
@@ -45,16 +45,16 @@ Naming Rules:
 - C++ is case-sensitive.
 Eg.    Legal                  Illegal
         Age                     int
-        age                    $age
-       _age                   2014_age
+        age                     $age
+       _age                    2014_age
        My_age                  My age
     your_age_in_2014            Age+1
         INT                     cout
         Int                    return
 
-Naming best preactices:
-- Be consistent with your naming conventions (choose between underscore_type or CamelCase)
-- Use meaningful names 
+Naming best practices:
+- Be consistent with your naming conventions (choose between underscore_type or CamelCase).
+- Use meaningful names. 
 - Never use variables before initializing them
 - Declare variables close to when you need them in your code.
 
@@ -64,8 +64,8 @@ Initializing Variables: C++ allows 3 types of initializing.
 
 int age;          // uninitialialized 
 
-int age = 21;    // C-like initalizing 
-int age (21);    // Constructor intializing
+int age = 21;     // C-like initalizing 
+int age (21);     // Constructor intializing
 
 int age {21};    // C++11 list intializing syntax 
 
@@ -114,7 +114,7 @@ int main() {
 Local Scope: Variables declared within the curly braces of main function. Their scope/visibility is limited 
 to the statements in the main function that follow the decalaration of the variable.
 
-Global Scope: variables declared outside the any funtion. And can be accessed from any part of the program.
+Global Scope: Variables declared outside any funtion. And can be accessed from any part of the program.
 
 Note - Unlike local variables, global variables are automatically initialized to 0.
 
@@ -164,7 +164,7 @@ Primitive Data Types:
           char                   Exactly one byte. At least 8 bits 
         char16_t                 At least 16 bits 
         char32_t                 At least 32 bits 
-        wchar_t                Can represent largest available cahracter set.
+        wchar_t                  Can represent largest available character set.
 
  * Integer types:
     - Used to represent whole numbers
@@ -177,7 +177,7 @@ Primitive Data Types:
     signed long long int         At least 64 bits
 
         Type name                   Size/Precison 
-    unsigned short int             At least  16 bits        // eg. ages
+    unsigned short int             At least 16 bits        // eg. ages
     unsigned int                   At least 16 bits
     unsigned long int              At least 32 bits 
     unsigned long long int         At least 64 bits         // kms' b/w planets
@@ -185,7 +185,7 @@ Primitive Data Types:
     Note - By default all integers are signed.
     unsigned integers are 0 or positive values only.
 
- * Floating-point Type
+ * Floating-point Type:
     - Used to represent non-integer numbers (real numbers like 1.2, 0.5, etc)
     - Represented by mantissa and exponent (scientific notaion)
     - Precision is the number of digits in mantissa 
@@ -407,7 +407,7 @@ Primitive Data Types:
           pi = 2.5;     // Compiler error when you change the value fo a decalred constant 
 
     
-      * Defined constants: using preprocessor directive
+      * Defined constants: using pre-processor directive
 
             constants decalared using the const keyword
             #define  pi 3.1415926
