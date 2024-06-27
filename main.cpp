@@ -29,7 +29,7 @@ into object (machine language) which will create .o/.obj file. As projects are c
 you many of these object files 
 
 1. Clean: Clean process removes all those object files and puts the project in clean state
-i.e. source code only no object files.This a non-issue if you have only one 
+i.e. 'source code only' no object files.This a non-issue if you have only one 
 cpp file but if you have 1000s' of them this becomes very important as it'll
 take significant amount of time to build a project.
 2. Build: It'll go through all the c++ files and build only what needs to be built.
@@ -45,7 +45,7 @@ Semantic Error: Something wrong with the meaning
 a + b;      // When it doesn't make sense to add a and b
 Eg. if 'a' is a char and 'b' is an int 
 
-Note: When fixing error start with the first one. This might help subsequent errors resolve automatically.
+Note: When fixing error, start with the first one. This might help subsequent errors resolve automatically.
 
 *Compiler warning: *Complier points a potention problem. Eg.
 int miles_driven;
