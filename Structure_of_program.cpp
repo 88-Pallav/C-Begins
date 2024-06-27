@@ -35,7 +35,7 @@ Use to explain complicated code and keep the style consistent.
 ********************************************************************************************
 *main() function: * Starting point of program execution.
 return 0 indicated successful program execution.
-eg. 1 No info expected from OS
+eg. 1 No. info expected from OS
 int main() {
     // code
     return 0;
@@ -81,8 +81,12 @@ cout << "data 1 is " << data1 << endl;
 cout << "data 1 is " << data1 << "\n"; 
 
 Note - When 'endl' manipulator is used, it also flushes the stream. 
-Since it the stream is buffered it may not get written to the console until flushed. 
-
+Since it the stream is buffered, it may not get written to the console until flushed. 
+Flushing the stream here means - All data that has been written to that stream is Output,
+includng any that may have been buffered. 
+Buffering means - Some temporary storage of data that can be modified 
+non-sequentially before read sequentially. It attempts to reduce difference between 
+input speed and output speed. 
 
 *cin *standard input stream, defaults to keyboard
                     &
@@ -122,7 +126,7 @@ int main() {
                Out
                There 
     */
-     
+
     int num1;
     int num2;
     double num3;
@@ -130,7 +134,7 @@ int main() {
     cout << "Enter an integer: ";
     cin >> num1;
     cout << "You entered: " << num1 << endl;
-
+    
     /*
     cin is tied to the keyboard and are not directly read by the cin, they are stored in a buffer.
     It will read whatever makes sense like 123 makes sense for int num1 and gets stored in num1.
@@ -178,7 +182,7 @@ int main() {
    Becasue after decimal it'll consider it input for double and give output accordingly.  
 
    Note: If we enter a string here then it'll give output integer as 0 and double as smthng random.
-   As it when saw the first char it got o a failed state.
+   As it when saw the first char, it got a failed state.
    */
    return 0;
 }
