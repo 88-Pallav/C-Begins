@@ -6,10 +6,10 @@
         favourite_number    // variable
         1.5 + 2.8           // addition
         2 * 5               // multiplication
-        a > b               // realtional
+        a > b               // relational
         a = b               // assignment 
 
- *  Statement: Complete line of code that perfomrs an action. Terminated my semi-colon.
+ *  Statement: Complete line of code that performs an action. Terminated my semi-colon.
                Contains expressions. Types: expression | null | compound | selection | 
                iteration | declaration | jump | try blocks | others
     Eg.
@@ -49,7 +49,7 @@
         cout << "num 1 is: " << num1 << endl;
         cout << "num 2 is: " << num2 << endl;
 
-        num1 = num2 = 1000;     // Chainged assignment, they are asociated right to left i.e. 1000 goes to num2 then num2's 1000 goes to num1.
+        num1 = num2 = 1000;     // Chained assignment, they are associated right to left i.e. 1000 goes to num2 then num2's 1000 goes to num1.
 
         cout << "num1 & num2 after chained assignment are: " << num1 << " " << num2 << endl;
 
@@ -124,7 +124,7 @@
 
     /*
  * Increment ++ and decrement -- Operators
-    Incremetns or decrements its operands by 1 (can be used with integers, floating types and pointers)
+    Increments or decrements its operands by 1 (can be used with integers, floating types and pointers)
 
     Prefix ++num
     Postfix num++ 
@@ -155,11 +155,11 @@
     cout << "Counter: " << counter << endl;     // 10
 
     rslt = ++counter;     // Note the pre-increment
-    // here we want to increment counter before I used and then assign it to rslt
+    // here we want to increment counter before it's used and then assign it to rslt
     cout << "Counter: " << counter << endl;     
     cout << "result: " << rslt << endl;
 
-    // Eg. 3 - post-incrememt 
+    // Eg. 3 - post-increment 
 
     counter = 10;
     rslt = 0;
@@ -171,7 +171,7 @@
     cout << "Counter: " << counter << endl;     // 11
     cout << "result: " << rslt << endl;         // 10
 
-    // Eg. 4 - pre-incrememt 
+    // Eg. 4 - pre-increment 
 
     counter = 10;
     rslt = 0;
@@ -184,7 +184,7 @@
     cout << "result: " << rslt << endl;         // 21
 
 
-     // Eg. 5 - post-incrememt 
+     // Eg. 5 - post-increment 
 
     counter = 10;
     rslt = 0;
@@ -196,17 +196,23 @@
     cout << "Counter: " << counter << endl;     // 11
     cout << "result: " << rslt << endl;         // 20
 
+    /* 
+    In pre-increment, counter value increases the rslt value and in post-increment it doesn't effect rslt value.
+    Main diff is that of effect on rslt value, in post-incremement the counter value remains for rslt calculation 
+    and in pre-increment we get a new counter value.
+    */ 
+
 /*
  * Mixed type Expressions: 
     - Operations occur on same type Operands. 
-    - If operands are different types, C++ wil convert one.
+    - If operands are different types, C++ will convert one.
     - C++ will automatically convert types (coercion). If it cant, it'll give compiler error. 
  
  * Conversions: 
     - Higher Vs Lower types are based on the size of the values the type can hold.  
        - long doubl > double > float > unsigned long > long > insigned int > int 
        - short and char types 
-       are always converted to int)
+      are always converted to int)
     - Type conversion: conversion of one operand to another data type
     - Promotion - conversion to a higher type (Used in mathematical expression)
     - Demotion - conversion to a lower type (Used with assignment to lower type) 
@@ -219,7 +225,7 @@
         lower = higher;     //  the higher is demoted to a lower
         int num {0};
         num = 100.2;        // 100.2 will demoted to 100 (Many compilers will warn you about the potential loss of precision) 
-    */
+*/
     // Explicit Type casting - static_cast<type>
 
     int total_amount {100};
@@ -245,7 +251,7 @@
     total = n1 + n2 + n3;
 
     double average {0.0};
-    average = static_cast<double>(total) / count;       // {double)total is Old C-Type cast
+    average = static_cast<double>(total) / count;       // {double}total is Old C-Type cast
 
     cout << "The 3 numbers were: " << n1 << ", " << n2 << ", " << n3 << endl;
     cout << "The sum of the numbers is: " << total << endl;
@@ -327,7 +333,7 @@
     cout << "Comparison result (not equals): " << not_equal_result << endl;
 
 /*
- * Relattional operators: 
+ * Relational operators: 
     expr1 op expr2 
 
     >       greater than
@@ -417,8 +423,8 @@
     cout << boolalpha;
 
     // Determine if an entered integer is between two other integers
-    // assume lower < upperrr
-    cout << "Enter an intger - the bounds are " << lowr << " and " << " upper " << " : ";
+    // assume lower < upper
+    cout << "Enter an intger - the bounds are " << lowr << " and " << uppr << " : ";
     cin >> nu;
 
     bool within_bounds {false};
@@ -429,7 +435,7 @@
 
     // Determine if an entered integer is outside two other integers
     // assume lowr < uppr
-    cout << "\nEnter an intger - the bounds are " << lowr << " and " << " upper " << " : ";
+    cout << "\nEnter an intger - the bounds are " << lowr << " and " << uppr << " : ";
     cin >> nu;
 
     bool outside_bounds {false};
@@ -440,7 +446,7 @@
 
     // Determine if an entered integer is on boundary of two other integers:
     // assume lowr < uppr
-    cout << "\nEnter an intger - the bounds are " << lowr << " and " << " upper " << " : ";
+    cout << "\nEnter an intger - the bounds are " << lowr << " and " << uppr << " : ";
     cin >> nu;
 
     bool on_bounds {false};
@@ -456,7 +462,7 @@
     
     const int wind_speed_for_coat {25};     // wind over this value requires a coat
     const int temp_for_coat {45};           // temperture below this value requires a coat
-
+    
     // Require a coat if wind speed is too high or temperature is too low
     cout << "\nEnter the current temperature in (F): ";
     cin >> temperature;
