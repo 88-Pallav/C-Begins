@@ -158,7 +158,7 @@
  * Characteristics:
     - Dynamic size
     - Elements are all the same type like arrays
-    - Stored contiguously in memory like arrays
+    - Stored *contiguously* in memory like arrays
     - Individual elements can be accessed by their position or index
     - First elementis at index 0.
     - Last element at index size-1.
