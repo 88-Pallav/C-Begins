@@ -64,6 +64,7 @@
 
 #include <iostream>
 #include <vector>
+#include <iomanip>
 using namespace std;
 
 int main() {
@@ -643,9 +644,333 @@ int main() {
    }
 
    // Using a Vector: 
-   vector<int> numnss
+   vector<int> numss {10, 20, 30, 40, 50};
+   for (unsigned int i{0}; i < numss.size(); ++i)  
+   // we use 'unsigned int' here because 'nums.size()' is returing an unsigned integer
+   // otherwise we get a warning: Comparison between signed and unsigned integers.   
+      cout << numss[i] << endl;
 
 
+   // Example: For loop for sum of all odd numbers between 1 to 15:
+   int sum {0};
+   for (int i{1}; i <= 15; ++i){
+      if (i % 2 != 0) {
+         sum += i;
+      }
+   }
+
+   /* Range based for loop: Added in C++11: We have the advantage of looping through a collection
+      of elements being able to easilr access each element without having to worry about increment, 
+      decrement or length of the collection or subscripting indexes.  
+
+      for (var_type var_name: sequence)
+         statement;     // can use var_name
+
+      for (var_type var_name: sequence) {
+         statement;     // can use var_name
+      }
+
+      // Example 1: 
+      int scores [] {100, 90, 97};
+
+      for (int score: scores)
+         cout << score << endl;
+
+      output: 
+         100
+         90
+         97
+   
+      // Example 2: Without type of variable:
+
+      int scores [] {100, 90,97};
+
+      for (auto score: scores)      // when we use 'auto' we dont have to mention type it figures out type itself.
+         cout << score << endl;
+      
+
+      // Calculating average temperatures using vector:
+
+      vector<double> temps {87.2, 77.1, 80.0, 72.5};
+
+      double average_temp {};
+      double running_sum {};
+
+      for (auto temp: temps)
+         running_sum += temp;
+
+      average_temp = running_sum / temps.size();
+
+
+      // Calculation using initializer list:
+
+      double average_temp {};
+      double running_sum {};
+      int size {0};
+
+      for (auto temp: {60.2, 80.1, 90.0, 78.2}) {
+         running_sum += temp;
+         ++size;
+      } 
+      average_temp = running_sum / size;
+
+
+      // Example with a string:
+
+      for (auto c : "Frank")
+         cout << c << endl;
+
+      Output:
+         F
+         r
+         a
+         n 
+         k
+      */
+
+      // Example 1: 
+      int scrs [] {10, 20, 30};
+
+      for (int scr: scrs)
+         cout << scr << endl;
+
+
+      // Example 2: a vector of doubles:
+      
+      vector<double> temperatures {87.9, 77.9, 80.0, 72.5};
+      double average_temp {};
+      double total {};
+
+      for (auto temp: temperatures)
+         total += temp;
+      
+      if (temperatures.size() != 0)
+         average_temp = total / temperatures.size();
+
+
+      cout << fixed << setprecision(1);      // feature of <iomanip> for decimal places
+      cout << "Average temperature is " << average_temp << endl;
+
+
+      // Example 3: Initializer list with a for loop
+
+      for (auto val: {1,2,3,4,5})
+         cout << val << endl;
+
+      
+      // Example 4: c stype string 
+
+      for (auto c: "This is a c style string") 
+         if (c != ' ')     // To remoev spaces
+            cout << c << endl;
+
+
+      // Example 5: replacing c with a tab : 
+
+      for (auto c: "This is a c style string") 
+         if (c == ' ')
+            cout << "\t";
+         else 
+            cout << c; 
+      
+      /*
+         While Loop: Is an example of pre-test loop bcz test is done in the beginning of the loop.
+                     If test fails immediately loop body will never execute.
+
+         while (expression)
+            statement;
+
+         while (expression) {
+            statement(s);
+         }
+
+      Example: While loop: 
+
+      int i {1};
+
+      while (i <= 5) {              // as long as the 'i' in less than 5, loop will keep running.
+         cout << i << endl;
+         ++i;                       // Important to increment 'i' otherwise loop will never terminate   
+      }                                as loop will terminate at 6 and if we don't increment i will 
+                                       always remain 1.         
+      Output:
+         1
+         2
+         3
+         4
+         5
+
+
+      Example 2: even number: 
+         
+      int i {1};
+
+      while (i <= 10) {
+         if (i % 2 == 0)
+            cout << i << endl;
+         ++i; 
+      }
+
+      Output:
+         2
+         4
+         6
+         8
+        10
+      
+      
+      Example 3: array example 
+
+      int scores [] {100, 90, 87};
+      int i {0};
+      
+      while (i < 3) {
+         cout << scores[i] << endl;
+         ++i;
+      }
+      Output:
+         100
+         90
+         87
+      
+
+      Example: A common use of loop is to provide input validation: We ask again and again till they enter a valid input.
+
+      int number {};
+
+      cout << "Enter an integer less than 100: ";
+      cin >> number;
+
+      while (number >= 100) {    // !(number < 100)
+         cout << "Enter an integer less than 100";
+         cin >> number;
+      }
+
+      cout << "Thanks" << endl;
+
+      Example: input validation 2:       
+      
+      int number {};
+
+      cout << "Enter an integer between 1 and 5: ";
+      cin >> number;
+
+      while (number <= 1 || number >= 5) {
+         cout << "Enter an integer between 1 and 5: ";
+         cin >> number;
+      }
+
+      cout << "Thanks" << endl;
+
+
+      Example: Boolean flag to control while loop - input validation
+
+      bool done {false};
+      int number {0};
+
+      while (!done) {
+         cout << "Enter an integer between 1 and 5: ";
+         cin >> number;
+         if (number <= 1 || number >= 5)
+            cout << "Out of range, try again" << endl;
+         else {
+            cout << "Thanks!" << endl;
+            done = true;
+            }   
+         }
+
+      KISS - Keep it short and simple | Keep it simple stupid
+      */
+
+      // Example 1: Countdown to blastoff 
+
+      int n {};
+      cout << "Enter a positive integer - start the countdown: ";
+      cin >> n;
+
+      while (n > 0) {
+         cout << n << endl;
+         --n;
+      }
+      cout << "Blastoff!" << endl;
+
+
+      // Example 2: A while loop that counts up.
+
+      int n_1 {};
+      cout << "Enter a positive integer to count up to: ";
+      cin >> n_1;
+
+      int i {1};
+      while (n_1 >= i) {
+         cout << i << endl;
+         i++;
+      }
+      
+   /* Do-while loop: 
+
+      do {
+         statements;
+      } while (expressions);
+      
+
+      Example: Do-while loop for input validation:
+
+      int number {};    // variable number cannot be declared inside the do-loop since it's being used in while loop
+      do {
+
+         cout << "Enter an integer between 1 and 5: ";
+         cin >> number;
+      
+      } while (number <= 1 || number >= 5);
+
+      cout << "Thanks" << endl;
+
+
+   Example: area calculation with calculate another: 
+
+   char selection {};
+
+      do {
+         double width {}, height {};
+         cout << "Enter width and height seperated by a space: ";
+         cin >> width >> height;
+
+         double area {width * height}; 
+         cout << "The area is " << area << endl;
+
+         cout << "calculate another ? (Y/N) : ";
+         cin >> selection;
+      } while (selection == 'Y' || selection == 'y' );
+      cout << "Thanks!" << endl;
+   */
+
+  // Example: Menu app
+
+   char selection {};
+   do {
+      cout << "\n====================" << endl;
+      cout << "1. Do this " << endl;
+      cout << "2. Do that " << endl;
+      cout << "3. Do something else" << endl;
+      cout << "Q. Quit" << endl;
+      cout << "Enter your selection here: " << endl;
+      cin >> selection; 
+
+      if (selection == '1')
+         cout << "Your code 1 - doing this " << endl;
+      else if (selection == '2')
+         cout << "You choose 2 - doing that" << endl;
+      else if (selection == '3')
+         cout << "You choose 3 - doing something else" << endl;
+      else if (selection == 'Q' || selection == 'q')
+         cout << "Goodbye...." << endl;
+      else 
+         cout << "Unknown option -- try again.... " << endl;
+
+   } while (selection != 'q' && selection != 'Q');
+
+   
    cout << endl;
    return 0;
 }
