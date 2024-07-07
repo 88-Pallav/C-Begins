@@ -63,6 +63,7 @@
 */ 
 
 #include <iostream>
+#include <vector>
 using namespace std;
 
 int main() {
@@ -444,7 +445,6 @@ int main() {
    cout << number << " is " << ((number % 2 == 0) ? "even" : "odd") << endl;
 
 
-
    int number_1{}, number_2{};
 
    cout << "Enter two integers seperated by a space: ";
@@ -458,7 +458,192 @@ int main() {
       cout << "The numbers are the same. " << endl;
    }
 
+   /* Looping aka iteration: Third basic building block of programming: 
+         - sequence, selection, iteration 
+      
+      - Iteration or repetition
+      - Allows the execution of a statement or block of statements repeatedly
+      - Loops are made up a loop condition and the body which contains the statement to repeat.
 
+   Use cases of Looping: 
+      - a specific number of times 
+      - for each element in a collection
+      - while a specific condition remains true 
+      - untill  a specific condition becomes false
+      - forever 
+      - many, many more
+
+   
+   Looping constructs in C++: 
+
+      for loop: 
+         - iterate a specific number of times.
+         
+      Range-based for loop:
+         - one iteration in each element in a range or collection
+      
+      while loop:
+         - iterate while a condition remains true 
+         - stop when the condition reamins false 
+         - check teh condition at the beginning of every iteration 
+
+      do-while loop:
+         - iterate while a condition reamins true
+         - stop when the condition becomes false
+         - check teh condition at the end of every iteration
+   */
+
+  /*
+   for loop: 
+
+      for (initialization; condition; increment)      
+         statement;                                // for a  single statement we use for-loop
+
+      for (initialization; condition; increment) {     
+         statement(s);                             // for multiple statements we use block-for-loop
+      }
+ 
+
+   int i {0};
+
+   for (i = 1; i <= 5; ++i)
+      cout << i << endl;
+
+   Output:    
+      1
+      2
+      3
+      4
+      5
+
+   for (int i {1} ; i <= 5; ++i)       // Here we are using initialization '{}' style 
+      cout << i << endl;
+
+   for (int i = 1; i <= 5 ; ++i)       // Here we are using assignment '=' style
+      cout << i << endl;
+
+   i = 100;    // error 'i' is only visible in the loop
+
+
+   // Display all even numbers between 1 and 10:
+
+   for (int i {1}; i <= 10; ++i) {
+      if (i % 2 == 0)
+         cout << i << endl;
+   }
+
+   Output:       
+      2
+      4
+      6
+      8
+      10 
+
+
+   // Using for loop in an array
+
+   int scores [] {100, 90, 87};
+
+   for (int i {0}; i < 3; ++i) {
+      cout << scores[i] << endl;
+   }
+
+   for (int i {0}; i <= 2; ++i) {
+      cout << scores[i] << endl;
+   }
+   
+   Note: above two same examples are to illustrate choice between '<' less than the size of array or
+         '<=' less than equal to size-1. Always use one way. 
+   Output: 
+      100
+      90
+      87
+
+
+   // comma operator: This operator allows to seperate expression by a comma anc both will execute.
+                       Associativity is right to left and result of he comma operator is the 
+                       left most expression.
+
+   Here we have initiatialized i to '1' and j to '5' | condition is to keep iteratioon at 5 and 
+   direction is to increment each one per iteration.
+
+   for (int i {1}, j {5}; i <= 5; ++i, ++j) {
+      cout << i << " * " << j << " : " << (i * j) << endl;
+   }
+
+   output: 
+      1 * 5 : 5
+      2 * 6 : 12
+      3 * 7 : 21
+      4 * 7 : 28
+      5 * 9 : 45
+
+
+   - The basic for loop is very clear and concise.
+   - We have used integers, we can use doubles in for-loop as well
+   - Here we have only counted up (i < 5), we can count down (i > 5) as well 
+     and similarly decrement (--i) instead of increment (++i)  
+   - All for loop's expressions are optional, it is possible to have 
+         - no initialization
+         - no test
+         - no increment  
+   
+   Example: 
+      
+      for (;;)
+         cout << "Endless loop" << endl;
+
+   Note: Don't write for-loop with missing expressions and complicated expressions with comma operators  
+
+   */
+   for (int i{1}; i <= 10; ++i) 
+      cout << i << endl;
+
+   // Here we wanna go 1 to 10 by 2 (Incrementing by 2)
+   for (int i {1}; i <= 10; i += 2)       
+      cout << i << endl;
+  
+   // Count down 
+   for (int i {10}; i > 0; --i )
+      cout << i << endl;
+   cout << "Blastoff" << endl;
+
+
+   // Incrementing by 10 and numbers divisible by 15 from 10 to 100
+   for (int i{10}; i <= 100; i += 10) {
+      if (i % 15 == 0)
+         cout << i << endl;
+   }
+
+   // An example of comma operator: 
+   for (int i{1},j{5}; i <=5; ++i,++j)
+      cout << i << " + " << j << " = " << (i + j) << endl;
+
+   // Using condition inside the loop: New line after every multple of 10:
+   for (int i{1}; i <= 100; ++i) {
+      cout << i;
+      if (i % 10 == 0) 
+         cout << endl;
+      else 
+         cout << " ";
+   }
+
+   // Using condition inside the loop: New line after every multiple of 5:
+   for (int i{1}; i <= 100; ++i) {
+      cout << i;
+      if (i % 5 == 0) 
+         cout << endl;
+      else 
+         cout << " ";
+   }
+
+   // Using conditional opertor inside the loop
+   for (int i{1}; i <= 100; ++i) {
+      cout << i << ((i % 10 == 0) ? "\n" : " ");
+   }
+
+   // Using a Vector: 
+   vector<int> numnss
 
 
    cout << endl;
