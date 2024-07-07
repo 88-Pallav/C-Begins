@@ -396,17 +396,67 @@ int main() {
             break;
          default: 
             cout << "OK" << endl;
-      /* If we don't mention deault or other two enum case i.e. up and down we'll get a compiler warning
-         that the other two cases have not been handled.
+      /* If we don't mention default or other two enum cases i.e. up and down we'll get a compiler warning
+         that the other two cases have not been handled. If we mention default tehn all the cases will be
+         handled. 
       */
    }
 
+   /* Conditional Operator : Exactly like if-else statement but concise.
+
+         (cond_expr) ? expr1 : expr2
+
+      - cond_expr evaluates to a boolean expression
+      - if cond_expr is true then the value of expr1 is returned.
+      - if cond_expr is false then the value of expr2 is returned. 
+
+      - similar to if-else construct
+      - ternary operator 
+      - Very useful when used inline.
+      - extremely prone to abuse.
+
+   Best practice: Never nest a conditional operator in another one,.
+
+   // Example: Conditional Operator 
+      int a{10}, b{20};
+      int score {92};
+      int result {};
+
+      result = (a > b) ? a : b;
+      result = (a < b) ? (b - a) : (a - b);
+      result = (b != 0) ? (a/b) : 0;
+      cout << ((score > 90) ? "Excellent": "Good ");
+
+   */
+
+   int number {};
+
+   cout << "Enter an integer: " ;
+   cin >> number;
+
+   // if-else style: 
+   if (number % 2 == 0) 
+      cout << number << " is even " << endl;
+   else 
+      cout << number << " is odd " << endl;
+
+   // Conditional operator style:
+   cout << number << " is " << ((number % 2 == 0) ? "even" : "odd") << endl;
 
 
 
+   int number_1{}, number_2{};
 
+   cout << "Enter two integers seperated by a space: ";
+   cin >> number_1 >> number_2;
 
+   if (number_1 != number_2) {
+      cout << "Largest is " << ((number_1 > number_2) ? number_1 : number_2) << endl;
+      cout << "Smallest is " << ((number_1 < number_2) ? number_1 : number_2) << endl;
 
+   }  else {
+      cout << "The numbers are the same. " << endl;
+   }
 
 
 
