@@ -970,7 +970,174 @@ int main() {
 
    } while (selection != 'q' && selection != 'Q');
 
+   /* Continue and break:
+
+   continue: 
+      - no further statement in the loop are executed.
+      - control immediately goes to beginning of the loop for the next iteration
+
+   break: 
+      - no further statements in the body of the loop are executed
+      - loop is immediately terminated 
+      - control immediately goes to the statement following the loop construct 
+
+   Example: Vector of integers 
+
+   vector<int> values {1, 2, -1, 3, -1, -99, 7, 8, 10};
+   for (auto val: values) {
+      if (val == -99)
+         break;
+      else if (val == -1)
+         continue;
+      else 
+         cout << val << endl;
+      }
+
+   Output:
+      1
+      2
+      3
+   */
+
+  /* Infinite loops: 
+   - Loops whose condition expression always evaluates to true
+   - Usually this is unintented and a programmer error
+   - Sometimes programmers use infinite loops and include break statements in the body to  control them
+   - Sometimes infinite loops are exactly what we need
+      * Event loop is an event driven program
+      * Operating system
+
+   for (;;)
+      cout << "This will print forever" << endl;
+
+   while (true)
+      cout << "This will print forever" << endl;
+
+   do {
+      cout << "This will print forever" << endl;
+   } while (true);
    
+   Example 1: 
+
+   while (true) {
+      char again {};
+      cout << "Do you want to loop again ? (Y/N): ";
+      cin >> again;
+
+      if (again == 'N' || again == 'n')
+         break;
+   }
+   */
+   
+   /* Nested Loops: We can loop as many levels deep but here we'll go only two levels deep.
+   - Loop nested within another loop
+   - Can be as many levels deep as the program needs
+   - Useful with multi-dimensional data structure (2D/3D arrays/vectors)
+   - Outer loop vs inner loop
+
+   
+   Example 1: 
+
+      for (outer_val {1}; outer_val <= 2; ++outer_val)
+         for (inner_val {1}; inner_val <= 3; ++inner_val)
+            cout << outer_val << ", " << inner_val << endl;
+
+   Output:                 // Note: As compared to outer loop, inner loop loops faster.
+      1, 1                          In this case outer loop iterates two times and inner loop       
+      1, 2                          iterates three times. 
+      1, 3
+      2, 1
+      2, 2
+      2, 3
+   
+   
+   Example 2: Multilication table 
+
+   for (int num1 {1}, num1 <= 10; ++num1) {
+      for (int num2 {1}; num2 <= 10; ++num2){
+         cout << num1 << " * " << num2 << " = " << num1 * num2 << endl;
+      } 
+      cout << "-------------" << endl; 
+   }
+
+   Output: Multiplication table of 10.
+
+   
+   Example 3: Nested loop using a 2D array: Set all values to 1000
+
+   int grid [5][3] {};
+
+   for (int row {0}; row < 5; ++row){
+      for (int col {0}; col < 3; ++ col) {
+      grid [row][col] = 1000};
+      } 
+   }
+   
+
+   Example 4: Nested loop using a 2D array: display all elements 
+
+   int grid [5][3] {};
+
+   for (int row {0}; row < 5; ++row){
+      for (int col {0}; col < 3; ++col) {
+         cout << grid[row][col] << " ";
+      } 
+      cout << endl;
+   }
+   
+
+   Example 5: Nested loop using a 2D Vector display elements: 
+
+   vector<vector<int>> vector_2d {
+
+      {1, 2, 3},
+      {10, 20, 30, 40},
+      {100, 200, 300, 400, 500}
+   };
+   
+   for (auto vec: vector_2d) {
+      for (auto val: vec) {
+         cout << val << " "; 
+      }
+      cout << endl;
+   }
+   
+   Output: 
+      1  2  3
+     10 20 30 40
+     100   200   300   400   500   
+
+   */
+
+   // Example - Histogram
+
+   int num_items {};
+
+   cout << "How many data items do you have ? ";
+   cin >> num_items;
+
+   vector<int> data {};
+
+   for (int i{1}; i <= num_items; ++i) {
+      int data_items{};
+      cout << "Enter data items " << i << ": ";
+      cin >> data_items;
+
+      data.push_back(data_items);
+   }
+   cout << "\nDisplaying Histogram" << endl;
+   for (auto val: data) {
+      for (int i{1}; i <= val; ++i) {     
+         if (i % 5 == 0)      // asterisk after every 5th '-'
+            cout << "*";
+         else  
+            cout << "-";
+      }
+      cout << endl;
+   }
+
+
+
    cout << endl;
    return 0;
 }
