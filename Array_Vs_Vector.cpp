@@ -154,9 +154,7 @@ using namespace std;
 
 int main() {
 
-
- 
-
+    
 
 
 
@@ -229,15 +227,65 @@ int main() {
     cout << "Blastoff"
 
 
-    ************************************  Forward or count up **********************************************
+    ************************************  Forward or counting up **********************************************
 
     int n {};
-
-    cout << "Enter a positive number: ";
+    cout << "Enter a number you wish to count up to: ";
     cin >> n;
 
-    while (n > 0) {
-        cout << n << endl;
-        ++n;
+    int i{1};
+    while (i <= n) {
+        cout << i << endl;
+        i++;
+    } 
+
+
+    ************************************ Average of temperatures **********************************************
+
+    vector<double> temps {100.7, 88.9, 70.1, 96.1, 80.2};
+    double temp_sum {};
+
+    for (auto temp: temps)
+        temp_sum += temp;
+
+    average_temp = temp_sum / temps.size()
+    cout << average_temp << endl;
+
+
+    ************************************ Histogram ************************************************************
+
+    int num_items {};
+
+    cout << "How many data items do you have ? ";
+    cin >> num_items;
+
+    vector <int> data {};
+
+    for (int i{1}; i <= num_items; ++i) {
+        int data_items{};
+        cout << "Enter data items: " << i << ": ";
+        cin >> data_items;
+
+        data.push_back(data_items);
     }
+    cout << "\nDisplaying Histogram" << endl;
+    for (auto v: data) {
+        for (int i{1}; i <= val; ++i)
+            if (i % 5 == 0)
+                cout << "*";
+            else 
+                cout << "*";
+        }
+        cout << endl;        
+    }
+
+    }
+
+
+
+
+
+
+
+
 */
