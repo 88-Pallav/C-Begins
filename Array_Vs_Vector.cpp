@@ -269,12 +269,12 @@ int main() {
         data.push_back(data_items);
     }
     cout << "\nDisplaying Histogram" << endl;
-    for (auto v: data) {
+    for (auto val: data) {
         for (int i{1}; i <= val; ++i)
             if (i % 5 == 0)
                 cout << "*";
             else 
-                cout << "*";
+                cout << "-";
         }
         cout << endl;        
     }
