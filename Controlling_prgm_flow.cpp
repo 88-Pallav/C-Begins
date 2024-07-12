@@ -561,9 +561,9 @@ int main() {
       87
 
 
-   // comma operator: This operator allows to seperate expression by a comma anc both will execute.
-                       Associativity is right to left and result of he comma operator is the 
-                       left most expression.
+   // comma operator: This operator allows to seperate expression by a comma and both will execute.
+                      Associativity is right to left and result of the comma operator is the 
+                      left most expression.
 
    Here we have initiatialized i to '1' and j to '5' | condition is to keep iteratioon at 5 and 
    direction is to increment each one per iteration.
@@ -660,7 +660,7 @@ int main() {
    }
 
    /* Range based for loop: Added in C++11: We have the advantage of looping through a collection
-      of elements being able to easilr access each element without having to worry about increment, 
+      of elements being able to easily access each element without having to worry about increment, 
       decrement or length of the collection or subscripting indexes.  
 
       for (var_type var_name: sequence)
@@ -841,7 +841,7 @@ int main() {
       cout << "Enter an integer less than 100: ";
       cin >> number;
 
-      while (number >= 100) {    // !(number < 100)
+      while (number >= 100) {                         // !(number < 100)
          cout << "Enter an integer less than 100";
          cin >> number;
       }
