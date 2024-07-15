@@ -6,8 +6,8 @@ element_type element_name [conts_no_of_elements]
 
 eg.     int scores [5];
 
-    'int' is element type 
-    'scores' is array name
+    'int' is element_type 
+    'scores' is array_name
     '[5]' is number of elements
 
 
@@ -17,8 +17,8 @@ vector<element_type> vector_name;
 
 eg.     vector<char> vowels;
 
-    'vector' is vector keyword for declaring a vector
-    'char' is element type
+    'vector' is vector_keyword for declaring a vector
+    'char' is element_type
     'vowels' is vector_name
 
 
@@ -55,6 +55,10 @@ Vector has two ways of accessing an element:
     vector_name[index_position_of_element];
             or
     vector_name.at(index_position_of_element);
+
+    score.at(2) - element at 3rd index
+            or
+    score
 
 
 ***************************** Dynamic nature of a vector ***********************************
@@ -139,10 +143,6 @@ eg.
         cout << scores[i] << endl;
         ++i;`
     }
-
-    
-    
-    
 */
 
 
@@ -154,7 +154,80 @@ using namespace std;
 
 int main() {
 
-    
+   // Display all the menu: 
+
+   vector<int> list_of_nums{};
+
+   char select {};
+
+   do {
+      
+      cout << "\nP-Print numbers" << endl;
+      cout << "A - Add a number" << endl;
+      cout << "M - Display mean of the numbers" << endl;
+      cout << "S - Display the smallest number" << endl;
+      cout << "L - Display the largest number" << endl;
+      cout << "Q - Quit" << endl;
+      cout << "\nEnter your choice: ";
+      cin >> select;
+
+      if (select == 'p' || select == 'P') {
+         if (list_of_nums.size() == 0)
+            cout << "[] - List is empty!" << endl;
+         else {
+            cout << "[ ";
+            for (auto num: list_of_nums)
+               cout << num << " ";
+            cout << " ]";
+         }
+      }
+      else if (select == 'A' || select == 'a') {
+         int add_num {};
+         cout << "Enter the number you want to add to the list: ";
+         cin >> add_num;
+         list_of_nums.push_back(add_num);
+         cout << add_num << " added." << endl;
+      }
+      else if (select == 'M' || select == 'm') {
+         if (list_of_nums.size() == 0)
+            cout << "Unable to calculate mean - no data " << endl;
+         else {
+            int total{};
+            for (auto num: list_of_nums)
+               total += num;
+            cout << "The mean of numbers is: " << static_cast<double>(total)/list_of_nums.size() << endl;
+         } 
+      }
+      else if (select == 'S' || select == 's') {
+         if (list_of_nums.size() == 0)
+            cout << "Smallest can't be identified, the list is empty." << endl;
+         else {
+            int smallest = list_of_nums.at(0);
+            for (auto num: list_of_nums)
+               if (num < smallest)
+                  smallest = num;
+            cout << "The smallest number is: " << smallest << endl;
+         }
+      }
+      else if (select == 'L' || select == 'l') {
+         if (list_of_nums.size() == 0)
+            cout << "Largest number cannot be identified, list is empty." << endl;
+         else {
+            int largest = list_of_nums.at(0);
+            for (auto num: list_of_nums)
+               if (num > largest)
+                  largest = num;
+            cout << "The largest number is: " << largest << endl; 
+         }
+      }
+      else if (select == 'Q' || select == 'q') {
+         cout << "Goodbye" << endl;
+      }
+      else {
+         cout << "Unknown election, please try again" << endl;
+      }
+   } while (select != 'q' && select != 'Q');
+        
 
 
 
@@ -267,7 +340,7 @@ int main() {
         cin >> data_items;
 
         data.push_back(data_items);
-    }
+    }   
     cout << "\nDisplaying Histogram" << endl;
     for (auto val: data) {
         for (int i{1}; i <= val; ++i)
@@ -279,13 +352,34 @@ int main() {
         cout << endl;        
     }
 
-    }
+
+    ************************************ Exercise 18 ************************************************************
+
+    // Sum of product of all pairs of vector elements:
+ 
+    int result {};
+
+    int vec_ele {};
+    cout << "How many elements you want in the vector: " << endl;
+    cin >> vec_ele;
+
+    vector<int> vector{}; 
+
+    for (int i {1}; i < (vec_ele + 1); ++i) {
+        int ele {};
+        cout << "Enter the elements: " << i << endl;
+        cin >> ele;
+
+        vector.push_back(ele);
+        }
+
+    for (int i{}; i < vec_ele; ++i)
+        for (int j = i+1; j < vec_ele; ++j) {
+            result = result + vector.at(i) * vector.at(j);
+            cout << endl;
+            }
+        cout << "Sum comes out to be: " << result << endl;
 
 
-
-
-
-
-
-
+    ************************************ Section task *************************************************************
 */
