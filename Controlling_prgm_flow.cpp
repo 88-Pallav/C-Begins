@@ -1137,7 +1137,91 @@ int main() {
    }
 
 
+// Nested Loops - Sum of two product of all pairs of vector elements
+
+   int result {};
+
+   int vec_ele {};
+   cout << "How many elements you want in the vector: " << endl;
+   cin >> vec_ele;
+
+   vector<int> vector{}; 
+
+   for (int i {1}; i < (vec_ele + 1); ++i) {
+        int ele {};
+        cout << "Enter the elements: " << i << endl;
+        cin >> ele;
+
+        vector.push_back(ele);
+      }
+
+   for (int i{}; i < vec_ele; ++i) {
+      for (int j = i+1; j < vec_ele; ++j) {
+        result = result + vector.at(i) * vector.at(j);
+        cout << endl;
+      }}
+   cout << "Sum comes out to be: " << result << endl;
+
+
+   // Menu: Options list (Section-Challenge)
+
+   vector<int> list_of_nums{};
+
+   char select {};
+
+   do {
+      // Display menu
+      cout << "\nP-Print numbers" << endl;
+      cout << "A - Add a number" << endl;
+      cout << "M - Display mean of the numbers" << endl;
+      cout << "S - Display the smallest number" << endl;
+      cout << "L - Display the largest number" << endl;
+      cout << "Q - Quit" << endl;
+      cout << "\nEnter your choice: ";
+      cin >> select;
+
+      if (select == 'p' || select == 'P') {
+         if (list_of_nums.size() == 0)
+            cout << "[] - List is empty!" << endl;
+         else {
+            cout << "[ ";
+            for (auto num: list_of_nums)
+               cout << num << " ";
+            cout << " ]";
+         }
+      }else if (select == 'A' || select == 'a')
+         int add_num {};
+         cout << "Enter the number you want to add to the list: ";
+         cin >> add_num;
+         list_of_nums.push_back(add_num);
+         cout << add_num << " added." << endl;
+      
+
+
+   } while (select != 'q' && select != 'Q');
+
+
+   
+
+   
+
+
+
+
+   
+
+
+
+
 
    cout << endl;
    return 0;
 }
+
+
+
+
+
+
+
+
