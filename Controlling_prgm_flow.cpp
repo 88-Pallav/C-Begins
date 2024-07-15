@@ -1145,21 +1145,22 @@ int main() {
    cout << "How many elements you want in the vector: " << endl;
    cin >> vec_ele;
 
-   vector<int> vector{}; 
+   vector<int> vect{}; 
 
    for (int i {1}; i < (vec_ele + 1); ++i) {
         int ele {};
         cout << "Enter the elements: " << i << endl;
         cin >> ele;
 
-        vector.push_back(ele);
+        vect.push_back(ele);
       }
 
    for (int i{}; i < vec_ele; ++i) {
       for (int j = i+1; j < vec_ele; ++j) {
-        result = result + vector.at(i) * vector.at(j);
+        result = result + vect.at(i) * vect.at(j);
         cout << endl;
-      }}
+      }
+   }
    cout << "Sum comes out to be: " << result << endl;
 
 
@@ -1189,29 +1190,54 @@ int main() {
                cout << num << " ";
             cout << " ]";
          }
-      }else if (select == 'A' || select == 'a')
+      }
+      else if (select == 'A' || select == 'a') {
          int add_num {};
          cout << "Enter the number you want to add to the list: ";
          cin >> add_num;
          list_of_nums.push_back(add_num);
          cout << add_num << " added." << endl;
-      
-
-
+      }
+      else if (select == 'M' || select == 'm') {
+         if (list_of_nums.size() == 0)
+            cout << "Unable to calculate mean - no data " << endl;
+         else {
+            int total{};
+            for (auto num: list_of_nums)
+               total += num;
+            cout << "The mean of numbers is: " << static_cast<double>(total)/list_of_nums.size() << endl;
+         } 
+      }
+      else if (select == 'S' || select == 's') {
+         if (list_of_nums.size() == 0)
+            cout << "Smallest can't be identified, the list is empty." << endl;
+         else {
+            int smallest = list_of_nums.at(0);
+            for (auto num: list_of_nums)
+               if (num < smallest)
+                  smallest = num;
+            cout << "The smallest number is: " << smallest << endl;
+         }
+      }
+      else if (select == 'L' || select == 'l') {
+         if (list_of_nums.size() == 0)
+            cout << "Largest number cannot be identified, list is empty." << endl;
+         else {
+            int largest = list_of_nums.at(0);
+            for (auto num: list_of_nums)
+               if (num > largest)
+                  largest = num;
+            cout << "The largest number is: " << largest << endl; 
+         }
+      }
+      else if (select == 'Q' || select == 'q') {
+         cout << "Goodbye" << endl;
+      }
+      else {
+         cout << "Unknown election, please try again" << endl;
+      }
    } while (select != 'q' && select != 'Q');
-
-
    
-
-   
-
-
-
-
-   
-
-
-
 
 
    cout << endl;
